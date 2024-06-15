@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static%}
+<head>
+    <title>Notifications</title>
+    <link rel="stylesheet" href="{%static 'notification.css'%}"/>
+</head>
+<body>
+    {% csrf_token %}
+    <div class="notify">
+    <h2>notifications</h2>
+    {%for notifi in notification%}
+    <p>{{ time }}</p>
+    <p><b>{{ notifi.text }}</b></p>
+    {%endfor%}
+    </div>
+</body>

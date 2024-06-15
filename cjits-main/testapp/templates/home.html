@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+<html>
+    <head>
+        <title>Home</title>
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{%static 'home.css' %}" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+            integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="stars"></div>
+        <div class="star2"></div>
+        <div class="star3"></div>
+        {%block content%}
+        <!----------------------------navbar----------------------->
+        <div class="topnav" id="myTopnav">
+            <a href="#home" class="active">Home</a>
+            <a href="learn">Learn</a>
+            <a href="events">Events</a>
+            <a href="documents_list">Uploads</a>
+            <a href="chat">chat</a>
+            <a href="notification">notifications</a>
+            <a href="login">logout</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" color="white"></i>
+            </a>
+            <p class="username">logged in as {{ user.username }}</p>
+        </div>
+        <!----------script for navbar--------------->
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+        </script>
+        <div class="home-image">
+            <img src="{%static 'images/college.jpg'%}" width="100%"
+                class="img-fluid" alt="Responsive image">
+        </div>
+        <div class="heading" padding-left="50px">
+            <h3>CJITS</h3>
+        </div>
+
+        <div class="typewriter">
+            <span class="first-text">Connect</span>
+            <span class="second-text"></span>
+            <p class="intro">
+                Christu Jyothi Institute of Technology and Science (CJITS) is a
+                prestigious engineering college located in Yeshwanthapur,
+                Jangoan, Telangana, India. Established in 1998, CJITS has
+                emerged as a leading institution for technical education in the
+                region, known for its commitment to excellence in academics,
+                research, and innovation.<br>
+                The sprawling campus of CJITS is spread over acres of lush
+                greenery, providing an ideal environment for learning and
+                personal development. The institute boasts state-of-the-art
+                infrastructure, well-equipped laboratories, modern classrooms,
+                and cutting-edge facilities that foster a conducive learning
+                environment for students pursuing Bachelor of Technology
+                (B.Tech) programs.<br><br>
+                CJITS boasts a state-of-the-art campus with modern
+                infrastructure, well-equipped laboratories, smart classrooms,
+                and advanced facilities that provide students with a conducive
+                learning environment. The faculty at CJITS comprises highly
+                qualified and experienced professors who are dedicated to
+                nurturing the intellectual and professional growth of students.
+                They employ innovative pedagogical methods, including practical
+                demonstrations, industry-oriented projects, and
+                interdisciplinary learning, to impart knowledge and skills that
+                align with the demands of the industry.<br><br>
+            </p>
+            <!-------------------script for the animated text----------->
+            <script>
+            const text=document.querySelector(".second-text");
+
+            const textload = () =>{
+               setTimeout(()=>{
+                text.textContent="&chat";
+               },0);
+               setTimeout(()=>{
+                text.textContent="community";
+               },4000);
+               setTimeout(()=>{
+                text.textContent="&update";
+               },8000);   
+            }
+            textload();
+            setInterval(textload,12000);
+        </script>
+        </div>
+        <br>
+        <!-----------------------the cards for college management--------------->
+        <div class="container-cards">
+            <div class="card">
+                <div class="card-image card-4"></div>
+                <h2>live chat</h2>
+                <p>Join and communicate</p>
+                <p>Join the chat by clicking chat option and enter into the room
+                    by entering room details and discuss homework or ideas from
+                    school they didn't understand. </p>
+                <a href="chat">Explore</a>
+            </div>
+            <div class="card">
+                <div class="card-image card-5"></div>
+                <h2>Learn</h2>
+                <p>Explore and self-learn</p>
+                <p>CJITS is poised to become an acclaimed Centre of Excellence
+                    in Academics and Research and be listed among the top
+                    colleges. with help of self learning</p>
+                <a href="learn">Explore</a>
+            </div>
+            <div class="card">
+                <div class="card-image card-6"></div>
+                <h2>Events</h2>
+                <p>The active events in campus</p>
+                <p>Club activities assist students to cultivate a sense of unity
+                    and working with others in reaching the same goals. Students
+                    develop social skills,Extracurricalar activities</p>
+                <a href="events">Explore</a>
+            </div>
+            <div class="card">
+                <div class="card-image card-7"></div>
+                <h2>Lecturer uploads</h2>
+                <p>Student Activity Club</p>
+                <p>Club activities assist students to cultivate a sense of unity
+                    and working with others in reaching the same goals. Students
+                    develop social skills,Extracurricalar activities</p>
+                <a href="document_list">Explore</a>
+            </div>
+        </div>
+
+        <div class="container-cards">
+            <div class="card">
+                <div class="card-image card-1"></div>
+                <h2>Chairmen</h2>
+                <p>Rev. Udumala Bala</p>
+                <p>CJITS was established under the Chairmanship of Most. Rev.
+                    Udumala Bala D.D,Former bishop of Warangal and it is owned
+                    and managed by Warangal Diocesan Society.</p>
+            </div>
+            <div class="card">
+                <div class="card-image card-2"></div>
+                <h2>Director</h2>
+                <p>Fr.T. Augustine Reddy</p>
+                <p>CJITS is poised to become an acclaimed Centre of Excellence
+                    in Academics and Research and be listed among the top
+                    colleges.</p>
+            </div>
+            <div class="card">
+                <div class="card-image card-3"></div>
+                <h2>Principal</h2>
+                <p>Dr.Chandrashekhar Reddy.S</p>
+                <p>Recent technological advancements have necessitated the
+                    redefining of the concept of education is now no more a
+                    process of transferring of information and knowledge</p>
+            </div>
+        </div>
+
+
+
+
+        <!------------footer---------->
+        <div class="footer">
+            <div class="footer-content">
+                <h3>CJITS</h3>
+                <p>Christu Jyothi Institute of Technology and Science
+                    Yeshwanthapur,Jangoan </p>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy;2023 CJITS. designed and developed by <span>
+                        Rajesh Maroju</span> </p>
+                <p>Need any support contact (or) Mail to
+                    students.cjits@gmail.com </p>
+            </div>
+        </div>
+
+
+        {%endblock%}
+    </body>
+</html>

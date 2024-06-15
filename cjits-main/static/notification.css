@@ -1,0 +1,17 @@
+*{
+    background-color: black;
+}
+.notify{
+    text-align: center;
+}
+.notify h2{
+    color: rgb(27, 141, 241);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}
+.notify p{
+    font-size: 20px;
+    text-align: left;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+}

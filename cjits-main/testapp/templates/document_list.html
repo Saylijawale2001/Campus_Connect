@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>Files</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'uploads.css' %}" />
+
+</head>
+<body>
+    
+    <div class="head">
+    <h1>Get the subject uploads by the faculty</h1>
+        
+</div>
+    <div class="files">
+        <table>
+            <tr class="table_display">
+                <th>subject</th>
+                <th>name</th>
+                <th>title</th>
+                <th>semister</th>
+                <th>download</th>
+            </tr>
+        <tr>
+        {% for document in documents %}
+        {% csrf_token %}
+            <td>{{ document.subject }}</td>
+            <td>{{ document.filename }}</td>
+            <td>{{ document.title }}</td>
+            <td>{{ document.semister }}</td>
+            <td><a href="{{ document.file.url }}" download="{{ document.title }}">{{ document.title }}</a>  </td> 
+         </tr> 
+        {% endfor %}
+      
+    </table>
+    </div>
+    </body>
+</html>
